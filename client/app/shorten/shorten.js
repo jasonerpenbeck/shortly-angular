@@ -5,10 +5,10 @@ angular.module('shortly.shorten', [])
   $scope.link = {};
 
   $scope.addLink = function() {
-    Links.addLinks().then(function(data) {
+    Links.addLinks($scope.link).then(function(data) {
 
       // Is this the right naming?
-      $scope.link = data.data;
+      // $scope.link = data.data;
     })
   };
 

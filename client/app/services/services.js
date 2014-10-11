@@ -14,11 +14,11 @@ angular.module('shortly.services', [])
     });
   }
 
-  var addLinks = function() {
+  var addLinks = function(obj) {
     console.log('In the addLinks method of the factory');
     // Need to do something to shorten an incoming link
 
-    return $http.post('/api/links').
+    return $http.post('/api/links', obj).
     success(function(data, status, headers, config) {
       console.log(data);
       return data;
