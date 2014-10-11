@@ -3,7 +3,7 @@ angular.module('shortly.services', [])
 .factory('Links', function ($http) {
 
   var getLinks = function() {
-    console.log('In the factory');
+    console.log('In the getLinks method of factory');
     return $http.get('/api/links').
     success(function(data, status, headers, config) {
       console.log(data);
@@ -14,8 +14,24 @@ angular.module('shortly.services', [])
     });
   }
 
+  var addLinks = function() {
+    console.log('In the addLinks method of the factory');
+    // Need to do something to shorten an incoming link
+
+    return $http.post('/api/links').
+    success(function(data, status, headers, config) {
+      console.log(data);
+      return data;
+    }).
+    error(function(data, status, headers, config) {
+      console.log('Error: ',data);
+    });
+  }
+
+
   return {
-    getLinks: getLinks
+    getLinks: getLinks,
+    addLinks: addLinks
   }
 
 })
