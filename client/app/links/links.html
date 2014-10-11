@@ -1,7 +1,7 @@
 <div id='container' ng-controller='LinksController'>
   <div id = 'anything'><a href='#/shorten'>Shorten</a></div>
+  <input type="text" name="search" ng-model="search" size="40" placeholder="Search for links">
 
-  <div id = 'link' ng-repeat='link in data.links | orderBy:title' >{{link}} <br> <a href="{{ link.base_url }}/{{ link.code }}" ng-click="link.visits = link.visits + 1">{{ link.title}}</a></div>
-
+  <div id = 'link' ng-repeat='link in data.links | orderBy:["-visits","title"] | filter: search'><a href="{{ link.base_url }}/api/links/{{ link.code }}" ng-click="link.visits = link.visits + 1">{{ link.title}}</a>: {{ link.visits}} visits</div>
 
 </div>
