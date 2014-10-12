@@ -1,10 +1,10 @@
 <div id='container' ng-controller='ShortenController'>
 
 <div id='shorten'>
-  <h1>shorten</h1>
+<!--   <h1>shorten</h1> -->
   <form name="shortenForm" ng-submit='addLink()' novalidate>
-    <input name="url" type='url' ng-model='link.url'>
-    <button ng-disabled="shortenForm.$invalid">shorten</button>
+    <input class="input-url" name="url" type='url' ng-model='link.url' placeholder="Enter a url to shorten">
+    <button class="button-shorten" ng-disabled="shortenForm.$invalid">shorten</button>
     <p ng-show="shortenForm.url.$invalid" class="url-error">Enter a real URL, man.</p>
   </form>
 </div>

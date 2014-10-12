@@ -2,6 +2,6 @@
   <div class = 'shorten-header'><a href='#/shorten'>Shorten Something Else</a></div>
   <input class = "link-search" type="text" name="search" ng-model="search" size="40" placeholder="Search for links">
 
-  <div class = 'link' ng-repeat='link in data.links | orderBy:["-visits","title"] | filter: search'><span class = "count">{{ link.visits}}</span><a href="{{ link.base_url }}/api/links/{{ link.code }}" ng-click="link.visits = link.visits + 1" target="_blank">{{ link.title}}</a></div>
+  <div class = 'link fx-zoom-normal fx-easing-bounce fx-speed-900'  ng-repeat='link in data.links | orderBy:["-visits","title"] | filter: search'><div class = "count">{{ link.visits}}</div><a href="{{ link.base_url }}/api/links/{{ link.code }}" ng-click="link.visits = link.visits + 1" target="_blank" class="link-text">{{ link.title.length > 48 ? link.title.slice(0,40) + '...' : link.title }}</a></div>
 
 </div>

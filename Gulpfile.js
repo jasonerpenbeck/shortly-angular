@@ -40,4 +40,3 @@ gulp.task('serve', function() {
 });
 
 gulp.task('default', ['start']);
-
